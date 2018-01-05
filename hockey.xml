@@ -1,0 +1,164 @@
+<!DOCTYPE hockey SYSTEM "hockey.dtd">
+
+<!-- CS345 - Final Project
+ Hockey Database
+ Cameron Pilarski | Bob Doser -->
+
+<!-- Inserted some sample data -->
+<!-- Sample data includes: 1 league, 1 team and its apparel,
+ 1 player and their statistics, equipment, team awards and
+ records, 1 venue and its games, team affiliations -->
+
+<!-- database -->
+<hockey>
+    <!-- league (NHL) -->
+    <league>
+        <name>National Hockey League</name>
+        <team teamid="5hdyer4" venue="Hope Arena">
+
+            <!-- team owner -->
+            <owner ownerid="jj10945">
+                <first>Jeremy</first>
+                <last>Jacobs</last>
+                <activity status="true"/>
+            </owner>
+            <!-- end team owner -->
+
+            <name>Penguins</name>
+            <city>Pittsburgh</city>
+            <activity status="true"/>
+
+            <!-- team coaches-->
+            <coach>
+                <first>Blake</first>
+                <last>Tunnel</last>
+                <type role="Head"/>
+            </coach>
+            <coach>
+                <first>Mike</first>
+                <last>Frost</last>
+                <type role="Assistant"/>
+            </coach>
+            <!-- end team coaches -->
+
+            <!-- player -->
+            <player playerid="ds12452">
+                <first>Dylan</first>
+                <last>Smith</last>
+                <position playerPosition="C"/>
+                <handedness hand="RH"/>
+                <number>11</number>
+                <activity status="true"/>
+
+                <!-- player staistics -->
+                <statistics>
+                    <year>2016</year>
+                    <goals>34</goals>
+                    <assists>12</assists>
+                    <games_played>45</games_played>
+                    <points>86</points>
+                    <shots>134</shots>
+                    <shooting_percentage>18.00</shooting_percentage>
+                    <pim>35</pim>
+                    <saves>n/a</saves>
+                    <gaa>n/a</gaa>
+                </statistics>
+                <!-- end player statistics -->
+
+                <!-- player equipment -->
+                <equipment>
+                    <equipment_type type="Helmet"/>
+                    <color color_type="Black"/>
+                </equipment>
+                <equipment>
+                    <equipment_type type="Stick"/>
+                    <color color_type="Black"/>
+                </equipment>
+                <!-- end player equipment-->
+
+                <!-- player salary-->
+                <salary>
+                    <amount>90000.00</amount>
+                    <years_remaining>8</years_remaining>
+                </salary>
+                <!-- end player salary -->
+
+            </player>
+            <!-- end player -->
+
+            <!-- team awards -->
+            <awards>
+                <name>Stanley Cup</name>
+                <year>2016</year>
+                <description>Championship title</description>
+            </awards>
+            <!-- end awards -->
+
+            <!-- team records -->
+            <records>
+                <year>2016</year>
+                <wins>44</wins>
+                <losses>1</losses>
+                <ties>0</ties>
+                <points>88</points>
+                <place>1</place>
+            </records>
+            <!-- end of team records -->
+
+            <!-- team sponsors -->
+            <sponsors>
+                <name>Nokia</name>
+                <year>2016</year>
+                <amount>24000.00</amount>
+            </sponsors>
+            <!-- end team sponsors -->
+
+            <!-- team apparel -->
+            <apparel>
+                <name>Short sleeve shirt</name>
+                <color color_type="Black"/>
+            </apparel>
+            <!-- end team apparel -->
+
+            <!-- team affiliations -->
+            <affiliations>
+                <name>Ducks</name>
+                <city>Wolcott</city>
+                <activity status="true"/>
+                <owner_name>Robert Smith</owner_name>
+            </affiliations>
+            <!-- end team affiliations -->
+
+        </team>
+        <!-- end teaam -->
+
+        <!-- league status -->
+        <activity status="true"/>
+
+    </league>
+    <!-- end league (NHL) -->
+
+    <!-- game venues -->
+    <venue teamid="5hdyer4">
+        <name>Hope Arena</name>
+        <city>Pittsburgh</city>
+        <activity status="true"/>
+
+        <!-- team games -->
+        <games>
+            <date>2016-12-12</date>
+            <time>16:00:00</time>
+            <game_type type="Exhibition"/>
+            <h_team teamid="5hdyer4"/>
+            <a_team teamid="1jsgd56"/>
+            <h_score>3</h_score>
+            <a_score>1</a_score>
+        </games>
+        <!-- end team games -->
+
+    </venue>
+    <!-- end game venues -->
+
+</hockey>
+<!-- end of database -->
+

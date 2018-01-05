@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- CS345 - Final Project
+ Hockey Database
+ Cameron Pilarski | Bob Doser -->
+
+<!-- database declaration, at least one league, at least one venue -->
+<!ELEMENT hockey (league)+, (venue)+>
+
+<!-- each venue has a city, active status, and can have many games in a day -->
+<!ELEMENT venue (name), (city), (activity), (games)+>
+<!ATTLIST venue teamid ID #REQUIRED>
+
+<!-- games have away and home team ID's, and game info such as time, date, scores -->
+<!ELEMENT games (date), (time), (h_team), (a_team), (game_type), (h_score), (a_score)>
+
+<!-- each league is composed of many teams -->
+<!ELEMENT league ((name), (team)+, (activity))>
+
+<!-- each team is composed of 1 owner, at least 1 coach, many players -->
+<!ELEMENT team ((owner), (name), (city), (activity), (coach)+, (player)+, (awards)+, (records)+, (sponsors)+, (apparel)+, (affiliations)+)>
+<!ATTLIST team teamid ID #REQUIRED>
+<!ATTLIST team venue venue_name #REQUIRED>
+
+<!-- a team can have multiple affiliate teams -->
+<!ELEMENT affiliations (name), (city), (owner_name), (activity)>
+
+<!-- a team could have apparel -->
+<!ELEMENT apparel (name), (color)>
+
+<!-- every team has records -->
+<!ELEMENT records (year), (wins), (losses), (ties), (points), (place)>
+
+<!-- a team could have more than one sponsor -->
+<!ELEMENT sponsors (name), (year), (amount)>
+
+<!-- owner -->
+<!ELEMENT owner ((first), (last), (activity))>
+<!ATTLIST owner ownerid ID #REQUIRED>
+
+<!-- coach -->
+<!ELEMENT coach ((first), (last), (type))>
+
+<!-- a player can have statistics over multiple seasons, different types of equipment, and could have a salary  -->
+<!ELEMENT player ((first), (last), (position), (handedness), (number), (activity), (statistics)+, (equipment)+, (salary)?)>
+<!ATTLIST player playerid ID #REQUIRED>
+
+<!-- equipment -->
+<!ELEMENT equipment (equipment_type), (color)+>
+
+<!-- salary -->
+<!ELEMENT salary (amount), (years_remaining)>
+
+<!-- team awards -->
+<!ELEMENT awards ((name), (year), (description))>
+
+<!-- stats -->
+<!ELEMENT statistics ((year), (goals), (assists), (games_played), (points), (shots), (shooting_percentage), (pim), (saves)?, (gaa)?)>
+
+
+<!-- attributes -->
+<!ELEMENT first (#PCDATA) >
+
+<!ELEMENT last (#PCDATA)>
+
+<!ELEMENT activity EMPTY>
+<!ATTLIST activity status(true|false) #REQUIRED>
+
+<!ELEMENT city (#PCDATA)>
+
+<!ELEMENT type EMPTY>
+<!ATTLIST type role(Head|Assistant|Volunteer) #REQUIRED>
+
+<!ELEMENT position EMPTY>
+<!ATTLIST position playerPosition (C|LW|RW|D|G|LD|RD) #REQUIRED>
+
+<!ELEMENT handedness EMPTY>
+<!ATTLIST handedness hand (RH|LH|AM) #REQUIRED>
+
+<!ELEMENT number (#PCDATA)>
+
+<!ELEMENT name (#PCDATA)>
+
+<!ELEMENT year (#PCDATA)>
+
+<!ELEMENT goals (#PCDATA)>
+
+<!ELEMENT assists (#PCDATA)>
+
+<!ELEMENT games_played (#PCDATA)>
+
+<!ELEMENT points (#PCDATA)>
+
+<!ELEMENT shots (#PCDATA)>
+
+<!ELEMENT shooting_percentage (#PCDATA)>
+
+<!ELEMENT pim (#PCDATA)>
+
+<!ELEMENT description (#PCDATA)>
+
+<!ELEMENT date (#PCDATA)>
+
+<!ELEMENT time (#PCDATA)>
+
+<!ELEMENT h_team EMPTY>
+<!ATTLIST h_team teamid ID #REQUIRED>
+
+<!ELEMENT a_team (#PCDATA)>
+<!ATTLIST a_team teamid ID #REQUIRED>
+
+<!ELEMENT game_type EMPTY>
+<!ATTLIST game_type type (Final|Regular|Playoff|Friendly|Exhibition) #REQUIRED>
+
+<!ELEMENT h_score (#PCDATA)>
+
+<!ELEMENT a_score (#PCDATA)>
+
+<!ELEMENT wins (#PCDATA)>
+
+<!ELEMENT losses (#PCDATA)>
+
+<!ELEMENT ties (#PCDATA)>
+
+<!ELEMENT place (#PCDATA)>
+
+<!ELEMENT amount (#PCDATA)>
+
+<!ELEMENT saves (#PCDATA)>
+
+<!ELEMENT gaa (#PCDATA)>
+
+<!ELEMENT equipment_type EMPTY>
+<!ATTLIST equipment_type type (Shoulder Pads|Helmet|Neckguard|Elbow Pads|Gloves|Stick|Pants|Shin Pads|Skates)>
+
+<!ELEMENT years_remaining (#PCDATA)>
+
+<!ELEMENT color EMPTY>
+<!ATTLIST color color_type (Red|Yellow|Blue|Green|Orange|Purple|Black|White|Silver|Gold|Grey|Brown)>
+
+<!ELEMENT owner_name (#PCDATA)>
+
+
+
+
